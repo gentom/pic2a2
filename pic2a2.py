@@ -17,7 +17,7 @@ class Pic2AA:
         return "\n".join(image_ascii)
     
     # Maps each pixel to an ascii char based on the range in which it lies. 0-255 is divided into 11 ranges of 25 pixels each.
-    def _mapper(self, image, range_width=100):
+    def _mapper(self, image, range_width=25):
         pixels_in_image = list(image.getdata())
         pixels_to_chars = [self.ASCII_CHARs[int(value/range_width)] for value in pixels_in_image]
         return "".join(pixels_to_chars)
